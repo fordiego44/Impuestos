@@ -1,0 +1,30 @@
+
+
+CREATE TABLE `orders` (
+  `id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `date` date NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+-- AUTO_INCREMENT de las tablas volcadas
+
+-- AUTO_INCREMENT de la tabla `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
+ALTER TABLE `receptions` ADD `orders_id` BIGINT NOT NULL;
+ALTER TABLE `reception_details` ADD `orders_id` BIGINT NOT NULL;
